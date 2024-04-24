@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Blog Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <style>
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      .load {
+        width: 50px;
+        height: 50px;
+        margin: 30px auto 0;
+        border: solid 3px #8822aa;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        -webkit-transition: all 0.5s ease-in;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+        transition: all 0.5s ease-in;
+        animation-name: rotate;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    </style>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-100 font-sans antialis">
+    <nav class="bg-blue-300 p-4 text-white flex justify-between shadow-lg">
+      <div>
+        <h1 class="font-bold text-gray-700">AI Blog Generator</h1>
+      </div>
+      <div><a href="#" class="hover:underline text-sm">Sign out</a></div>
+    </nav>
+
+    <div class="flex-grow container mx-auto mt-10 px-4 sm:px-0">
+      <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+        <!-- transition-transform transform hover:scale-105 flex flex-col -->
+        <div class="text-center">
+          <h2 class="text-xl font-semibold m-4">
+            Welcome to AI Blog Generator
+          </h2>
+          <p class="text-gray-700">
+            Generate high-quality blog articles from YouTube videos using
+            artificial intelligence. Simply enter the link to the YouTube video
+            below and let the AI create the content for you!
+          </p>
+        </div>
+
+        <br />
+        <br />
+
+        <div>
+          <h3 class="m-4 font-semibold">Insert YouTube video link</h3>
+          <div class="flex space-x-4">
+            <input
+              id="youtubeLink"
+              type="url"
+              placeholder="Paste YouTube Link Here"
+              class="flex-grow text-sm p-2 border border-blue-200 rounded-xl"
+            />
+            <button
+              id="generate"
+              class="bg-blue-400 px-4 py-2 rounded-xl text-white hover:bg-blue-500"
+            >
+              Generate
+            </button>
+          </div>
+        </div>
+
+        <div style="display: none" id="loading-circle" class="load"></div>
+
+        <section class="mt-10 flex-grow">
+          <h2 class="m-4 font-semibold">Generated Blog Article</h2>
+          <div id="blogContent" class="m-4 text-gray-700 space-y-4"></div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="bg-gray-200 p-3 text-black text-center">
+      Code with
+      <a href="https://github.com/Dani-ctrl-n">@Daniel</a>
+    </footer>
+
+    <script></script>
+  </body>
+</html>
